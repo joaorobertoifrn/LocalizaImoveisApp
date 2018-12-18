@@ -1,0 +1,95 @@
+
+.propertyDetail{background:url("../img/listingBackground.jpg") no-repeat scroll left bottom /cover;display: block;background-repeat: repeat-y;
+  .headerbutton{background: transparent none repeat scroll 0 0;position:absolute;top: 0;z-index:9999999;
+    .col{
+      button{box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.2);background:rgba(192, 29, 30, 0.5) none repeat scroll 0 0;border-radius:50%;color:#fff;font-size:25px;height:50px;min-height:0;min-width:0;width:50px;
+      }
+    }
+    .leftButton{}
+    .rightButton{text-align:right;}
+  }
+
+  .slider{
+    .slider-slides{
+      .slider-slide{
+        .box{
+          img{height: 250px;width: 100%;}
+        }
+      }
+    }
+    .slider-pager{bottom: 60px;
+      .slider-pager-page{color:#fff;opacity: 1;width: 10px;
+        i{font-size: 11px;}
+      }
+      .active{color:#BF1D1D;opacity: 1}
+    }
+  }
+  .detailContainer{background: #fff none repeat scroll 0 0; margin: 0 15px; position: absolute; top: 80%;
+    .row{border-bottom:1px solid #e6e6e6}
+    h4{margin-top: 5px;margin-bottom: 5px}
+    h5{margin-top: 10px;margin-bottom: 0px}
+    .mainHeading{font-size: 13px;color:#050505;}
+    .subheading{font-size: 12px;color: #9e9e9e;}
+    .heading{
+      .col-75{
+        h4{font-size: 15px;color:#050505;}
+        p{font-size: 13px;color: #BABABA;}
+      }
+      .priceSection{text-align: right;
+        h4{font-size: 14px;color:#050505;}
+        p{font-size: 13px;color: #3CE2A4;}
+      }
+    }
+    .descRow{
+      .col{
+        h5{margin-bottom: 5px;}
+        p{font-size: 12px;color: #9e9e9e;}
+      }
+    }
+    .amenities{border:none;}
+    .desImg{margin-top: 10px;
+      .col{text-align: center;padding: 0;
+        img{width:35px;height: 35px;}
+        p{font-size: 11px;color: #9e9e9e;}
+      }
+    }
+    .list{
+      .item{border-bottom: 1px solid #e6e6e6;margin: 0;
+          h2{}
+          p{overflow: hidden;text-overflow:ellipsis;white-space:normal;margin: 0;}
+          i{color: #b7b7b7;font-size: 20px;}
+      }
+    }
+   }
+}
+.platform-android{
+  .propertyDetail{
+    .detailContainer{position: absolute; top: 40%;}
+  }
+}
+//------------Footer Section----
+.detailFooter{-webkit-box-shadow: 0px 5px 24px -4px rgba(71,62,71,1);-moz-box-shadow: 0px 5px 24px -4px rgba(71,62,71,1);box-shadow: 0px 5px 24px -4px rgba(71,62,71,1);
+  .row{padding: 0 78px;position: absolute;top: -26px;
+    .col{background: #c01d1e none repeat scroll 0 0;
+    border-radius: 50%;
+    height: 50px;
+    line-height: 40px;
+    margin: 0 10px;
+    text-align: center;
+    width: 50px;
+      i{font-size:25px;color:#fff;}
+    }
+    .callButton{background:#00CD00 none repeat scroll 0 0;}
+  }
+}
+
+//--- scss for the route map ...
+.property-road-map{
+  #map2 { width: 100%;height: 100%; background-color: #fff !important;}
+
+.scroll { height: 100%;}
+
+.map-container { background-color: #fff; padding-left: 20px; padding-right: 20px; padding-bottom: 10px; width: 100%; height: 100%;}
+}
+
+.dummyrow{padding: 25px;}

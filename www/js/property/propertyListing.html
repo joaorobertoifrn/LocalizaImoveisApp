@@ -1,0 +1,49 @@
+<ion-view>
+  <ion-nav-bar class="bar-stable logo-left">
+    <ion-nav-buttons side="left"><button  ng-click="toggleLeftSideMenu();" class="button button-icon button-clear ion-navicon"></button></ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-ios-location" ng-click="mapviewshow();"></button>
+      <button class="button button-icon button-clear ion-ios-search" ng-click="showModalSection(1);"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-header-bar class="bar-subheader">
+    <div class="row">
+      <div class="col {{hObj.status ? 'active' : ''}}" ng-repeat="hObj in subheaderData" ng-click="sortingOption($index)">
+        <i class ="icon icon {{hObj.icon}}"></i>{{hObj.title}}
+      </div>
+    </div>
+  </ion-header-bar>
+
+<ion-content class="propertyListing">
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+<!-- ng-class="{'active': item.id == states.activeItem}" ng-click="states.activeItem=item.id"> -->
+  <div class="card products" ng-repeat="prop in propertylist track by $index">
+    <i class = "heart icon icon ion-ios-heart {{prop.favouriteStatus ? 'active':''}}" ng-click="selectFavourite($index,propertylist[$index].porp_id)"></i>
+    <div class="row" ng-click="propertyDetailPage(propertylist[$index].porp_id)" >
+      <div class="col">
+        <img ng-src="{{prop.main_image}}" />
+      </div>
+      <a href="#/app/property-detail/{{propertylist[$index].porp_id}}"></a>
+      <div class="col details">
+        <div class=row><h2>$ {{prop.price}} Million</h2></div>
+        <div class=row><h3>{{prop.area_name}}</h3></div>
+        <div class=row><h4>{{prop.address}}</h3></div>
+        <div class=row><h3>{{prop.flat_type}}</h3></div>
+        <div class=row><h4>{{prop.area_range}}</h3></div>
+        <div class=row><h4>{{prop.property_holder_name}}</h3></div>
+      </div>
+    </div>
+    <a href="tel:7985689542"><div class="callButton"><i class = "icon icon ion-ios-telephone"></i></div></a>
+   </div>
+
+
+   <div class="row noShortlisted" ng-if="propertylist==''">
+     <div class="col"><h3>No Property To display!!.Please apply different filter criteria or reset it.</h3></div>
+   </div>
+
+</ion-content>
+</ion-view>

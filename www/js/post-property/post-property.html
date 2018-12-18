@@ -1,0 +1,60 @@
+<ion-view>
+  <ion-nav-bar class="bar-stable logo-left">
+    <ion-nav-title><div class="headinglogo">POST PROPERTY</div></ion-nav-title>
+    <ion-nav-buttons side="left"><button  ng-click="toggleLeftSideMenu();" class="button button-icon button-clear ion-navicon"></button></ion-nav-buttons>
+  </ion-nav-bar>
+
+<ion-content class="postproperty">
+  <div class="row contactheading">
+    <div class="col">
+      <p><span class="redColor">Post Your Property</span> - We've over 15 Lac buyers for you! It's Easy...It's Simple.. & Yes It's <span class="redColor">FREE*</span></p>
+    </div>
+  </div>
+
+  <form name="contactForm" class="formStyle" ng-submit="contactUs(contactForm);" novalidate >
+    <!--Name -->
+    <div class="row contactField" ng-class="{ 'has-errors' : contactForm.customer_name.$invalid, 'no-errors' : contactForm.customer_name.$valid}">
+      <input type="text" placeholder="Full Name" name="customer_name" ng-model="iniContact.customer_name" ng-minlength="3" ng-maxlength="20" maxlength="20" required>
+    </div>
+    <div class="error-container" ng-show="contactForm.customer_name.$error" ng-messages="contactForm.customer_name.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+
+    <!-- Email -->
+    <div class="row contactField" ng-class="{ 'has-errors' : contactForm.email.$invalid, 'no-errors' : contactForm.email.$valid}">
+      <input type="email" placeholder="Email" name="email" ng-model="iniContact.email" required>
+    </div>
+    <div class="error-container" ng-show="contactForm.email.$error" ng-messages="contactForm.email.$error">
+    <div ng-messages-include="error-list.html"></div>
+    </div>
+
+    <!--Property Information -->
+    <div class="row contactField" ng-class="{ 'has-errors' : contactForm.message.$invalid, 'no-errors' : contactForm.message.$valid}">
+      <textarea placeholder="Property Information" name="message" ng-model="iniContact.message" ng-minlength="3" required></textarea>
+    </div>
+    <div class="error-container" ng-show="contactForm.message.$error" ng-messages="contactForm.message.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+
+    <div class="row contactField removeborder">
+      <label class = "item item-input item-select"><div class = "input-label">Location</div>
+       <select>
+          <option>Preet Vihar</option>
+          <option selected>Rajouri Garden</option>
+          <option>Sangam Vihar</option>
+       </select>
+      </label>
+    </div>
+
+    <div class="buttonDiv">
+      <button class="button submitButton" ng-disabled="contactForm.$invalid">SUBMIT</button>
+    </div>
+  </form>
+
+  <script id="error-list.html" type="text/ng-template">
+    <div class="error" ng-message="minlength">Minimum length of this field is 3 characters!</div>
+    <div class="error" ng-message="maxlength">Maximum length of this field is 20 characters!</div>
+    <div class="error" ng-message="email">Please enter a valid email address.</div>
+  </script>
+</ion-content>
+</ion-view>

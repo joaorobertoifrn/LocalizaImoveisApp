@@ -1,0 +1,49 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu id="menu" class="menu" side="left">
+    <ion-header-bar class="expanded">
+       <!-- <img ng-src="img/default-avatar.png"  class="avatar motion spin fade"  > -->
+       <div class="welcome">Welcome,</div>
+	     <div class="menu-bottom" ng-if="!isLoggedin">Guest</div>
+       <div class="menu-bottom" ng-if="isLoggedin">{{accountDisplayData.customer_name}}</div>
+    </ion-header-bar>
+    <ion-content class="sideMenu menu-navigation has-header">
+      <ion-list>
+        <ion-item menu-close href="#/app/dashbaord">
+          <img src="img/home.png">Home
+        </ion-item>
+        <ion-item menu-close href="#/app/shortlist">
+          <img src="img/shortlist.png">Shortlisted
+        </ion-item>
+        <ion-item menu-close href="#/app/account" ng-if="isLoggedin">
+          <img src="img/account.png">My Account
+        </ion-item>
+        <ion-item menu-close href="#/app/post-property">
+          <img src="img/postproperty.png">Post Property
+        </ion-item>
+        <!-- <ion-item menu-close href="#/app/response">
+          <img src="img/response.png">View Responce
+        </ion-item> -->
+        <ion-item menu-close href="#app/search">
+          <img src="img/search.png">My Search
+        </ion-item>
+        <ion-item menu-close href="#/app/requirement">
+          <img src="img/postrequirement.png">Post Requirement
+        </ion-item>
+        <ion-item menu-close href="#app/feedback">
+          <img src="img/feedback.png">Feedback
+        </ion-item>
+        <ion-item menu-close  href="#/app/login" ng-if="!isLoggedin">
+          <img src="img/login.png">Login
+        </ion-item>
+        <ion-item menu-close  href="#/app/login" ng-if="isLoggedin" ng-click="logout();">
+          <img src="img/login.png">Logout
+        </ion-item>
+      </ion-list>
+
+    </ion-content>
+  </ion-side-menu>
+  </ion-side-menu>
+</ion-side-menus>

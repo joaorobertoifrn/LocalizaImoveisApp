@@ -1,0 +1,112 @@
+<ion-view>
+  <ion-nav-bar class="bar-stable logo-left">
+    <ion-nav-title><div class="headinglogo">POST REQUIREMENT</div></ion-nav-title>
+    <ion-nav-buttons side="left"><button  ng-click="toggleLeftSideMenu();" class="button button-icon button-clear ion-navicon"></button></ion-nav-buttons>
+  </ion-nav-bar>
+
+<ion-content class="postrequirement">
+  <div class="row contactheading">
+    <div class="col">
+      <p><span class="redColor">Set Property Alert</span> - Over 20,000 properties added daily.Set your Alert & Don't miss out on that perfect option.</p>
+    </div>
+  </div>
+
+  <form name="contactForm" class="formStyle" ng-submit="contactUs(contactForm);" novalidate >
+    <div class="containing">
+      <div class="row userChoice">I want to</div>
+      <div class="row userselect">
+        <div class="col">Buy</div>
+        <div class="col radio" ><input type="radio" name="gender" value="female"></div>
+        <div class="col">Rent</div>
+        <div class="col radio" ><input type="radio" name="gender" value="female"></div>
+      </div>
+    </div>
+
+    <!--Name -->
+    <div class="row contactField" ng-class="{ 'has-errors' : contactForm.customer_name.$invalid, 'no-errors' : contactForm.customer_name.$valid}">
+      <input type="text" placeholder="Full Name" name="customer_name" ng-model="iniContact.customer_name" ng-minlength="3" ng-maxlength="20" maxlength="20" required>
+    </div>
+    <div class="error-container" ng-show="contactForm.customer_name.$error" ng-messages="contactForm.customer_name.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+
+    <!-- Email -->
+    <div class="row contactField" ng-class="{ 'has-errors' : contactForm.email.$invalid, 'no-errors' : contactForm.email.$valid}">
+      <input type="email" placeholder="Email" name="email" ng-model="iniContact.email" required>
+    </div>
+    <div class="error-container" ng-show="contactForm.email.$error" ng-messages="contactForm.email.$error">
+    <div ng-messages-include="error-list.html"></div>
+    </div>
+
+    <div class="row contactField removeborder">
+      <label class = "item item-input item-select"><div class = "input-label">Property Type</div>
+       <select>
+          <option>Multistorey Apartment</option>
+          <option selected>Builder Floor Apartment</option>
+          <option>Residential House</option>
+          <option>Multistorey Apartment</option>
+          <option>Villa</option>
+          <option>Residential Plot</option>
+       </select>
+      </label>
+    </div>
+
+    <div class="row contactField removeborder">
+      <label class = "item item-input item-select"><div class = "input-label">Budget</div>
+       <select>
+          <option>$10 - 20 Million</option>
+          <option selected>$10 - 20 Million</option>
+          <option>$10 - 20 Million</option>
+          <option>$10 - 20 Million</option>
+          <option>$10 - 20 Million</option>
+          <option>$10 - 20 Million</option>
+       </select>
+      </label>
+    </div>
+
+    <div class="row contactField removeborder">
+      <label class = "item item-input item-select"><div class = "input-label">Bedroom</div>
+       <select>
+          <option>1</option>
+          <option selected>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+       </select>
+      </label>
+    </div>
+
+    <div class="row contactField removeborder">
+      <label class = "item item-input item-select"><div class = "input-label">Floor Preference</div>
+       <select>
+          <option>Any Floor</option>
+          <option selected>Below 10th Floor</option>
+          <option>10th Floor and above</option>
+          <option>Ground Floor Only</option>
+       </select>
+      </label>
+    </div>
+
+    <div class="row contactField removeborder">
+      <label class = "item item-input item-select"><div class = "input-label">Location</div>
+       <select>
+          <option>Preet Vihar</option>
+          <option selected>Rajouri Garden</option>
+          <option>Sangam Vihar</option>
+       </select>
+      </label>
+    </div>
+
+    <div class="buttonDiv">
+      <button class="button submitButton" ng-disabled="contactForm.$invalid">SUBMIT</button>
+    </div>
+  </form>
+
+  <script id="error-list.html" type="text/ng-template">
+    <div class="error" ng-message="minlength">Minimum length of this field is 3 characters!</div>
+    <div class="error" ng-message="maxlength">Maximum length of this field is 20 characters!</div>
+    <div class="error" ng-message="email">Please enter a valid email address.</div>
+  </script>
+</ion-content>
+</ion-view>

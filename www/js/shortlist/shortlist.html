@@ -1,0 +1,34 @@
+<ion-view>
+  <ion-nav-bar class="bar-stable logo-left">
+   <ion-nav-title><div class="headinglogo">SHORTLISTED</div></ion-nav-title>
+   <ion-nav-buttons side="left"><button  ng-click="toggleLeftSideMenu();" class="button button-icon button-clear ion-navicon"></button>
+   </ion-nav-buttons>
+</ion-nav-bar>
+
+<ion-content class="shortlistied">
+  <div class="row noShortlisted" ng-if="favListing == undefined">
+    <div class="col"><h3>No Shortlisted Property To display!!.Go to propertylisting and add your favourite property.</h3></div>
+  </div>
+  <div class="row clickon" ng-if="favListing == ''">
+    <div class="col"><h3>Click on <i class="ion-ios-heart-outline"></i> to select.</h3></div>
+  </div>
+  <div class="card products" ng-repeat="prop in favListing">
+    <div class="row">
+      <div class="col">
+        <img ng-src="{{prop.main_image}}" />
+        <!-- <i class = "heart icon icon ion-ios-heart-outline {{prop.favouriteStatus ? 'active':''}}" ng-click="selectFavourite($index,propertylist[$index].porp_id)"></i> -->
+      </div>
+      <a href="#/app/property-detail/{{favListing[$index].porp_id}}"></a>
+      <div class="col details" ng-click="propertyDetailPage(favListing[$index].porp_id)" >
+        <div class=row><h2>$ {{prop.price}} Million</h2></div>
+        <div class=row><h3>{{prop.area_name}}</h3></div>
+        <div class=row><h4>{{prop.address}}</h3></div>
+        <div class=row><h3>{{prop.flat_type}}</h3></div>
+        <div class=row><h4>{{prop.area_range}}</h3></div>
+        <div class=row><h4>{{prop.property_holder_name}}</h3></div>
+      </div>
+      <a href="tel:7985689542"><div class="callButton"><i class = "icon icon ion-ios-telephone"></i></div></a>
+    </div>
+   </div>
+</ion-content>
+</ion-view>

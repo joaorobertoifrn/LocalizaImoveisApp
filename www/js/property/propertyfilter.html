@@ -1,0 +1,50 @@
+<ion-modal-view class="filter-modal">
+	<ion-header-bar class="bar-stable">
+		<button ng-click="filterClose()" class="button back-button button-icon button-clear header-item ion-android-arrow-back"></button>
+		<h1 class="title">Filter By</h1>
+		<div class="top-button">
+			<button ng-click="resetFilter();filterClose()" class="button reset-button  ion-ios-refresh-outline"></button>
+			<button ng-click="getPropertylist();filterClose()" class="button apply-button top-button">Apply</button>
+		</div>
+	</ion-header-bar>
+	<ion-content class="filter-modal-section" scroll="true" >
+		<!-- range bar -->
+		<div class="row heading"><div class="col">BUDGET</div></div>
+		<div class="row rangebar">
+			<div class="col">
+				<div class="item range range-positive">
+					<rzslider rz-slider-model="slider.min" rz-slider-high="slider.max" rz-slider-options="slider.options"></rzslider>
+				</div>
+			</div>
+		</div>
+
+		<!--property Type -->
+		<div class="row heading"><div class="col">PROPERTY TYPE</div></div>
+		<div class="row propType" ng-repeat="pObj in propertytype" ng-if="$index %2===0">
+			<div class="col {{propertytype[$index].status ? 'active' : ''}}" ng-if="$index < propertytype.length" ng-click="selectProperty($index);">{{propertytype[$index].name}}</div>
+			<div class="col {{propertytype[$index+1].status ? 'active' : ''}}" ng-if="$index+1 < propertytype.length" ng-click="selectProperty($index+1);">{{propertytype[$index+1].name}}</div>
+		</div>
+
+		<!-- Bedroom-->
+		<div class="row heading"><div class="col">BEDROOM</div></div>
+		<div class="row bedroomNo"><div class="col {{brooms[$index].status ? 'active' : ''}}" ng-repeat="bObj in brooms" ng-click="selectroom($index)">{{bObj.name}}</div></div>
+
+		<!--posted By-->
+		<div class="row heading"><div class="col">POSTED BY</div></div>
+		<div class="row posted"><div class="col {{posttype[$index].status ? 'active' : ''}}" ng-repeat="postObj in posttype" ng-click="selectposted($index)">{{postObj.name}}</div></div>
+
+		<!--posted By-->
+		<div class="row heading"><div class="col">FURNISHING STATUS</div></div>
+		<div class="row posted"><div class="col {{furnishingstatus[$index].status ? 'active':''}}" ng-repeat="fObj in furnishingstatus" ng-click="furStatus($index)">{{fObj.name}}</div></div>
+
+		<!--AREA-->
+		<div class="row heading"><div class="col">AREA</div></div>
+		<div class="row rangebar">
+			<div class="col">
+				<div class="item range range-positive">
+					<rzslider rz-slider-model="sliderarea.min" rz-slider-high="sliderarea.max" rz-slider-options="sliderarea.options"></rzslider>
+				</div>
+			</div>
+		</div>
+</ion-content>
+</ion-modal-view>

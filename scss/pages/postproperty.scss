@@ -1,0 +1,29 @@
+.postproperty{background:url("../img/listingBackground.jpg") no-repeat scroll left bottom /cover;display: block;background-repeat: repeat-y;
+  .contactheading{
+    .col{margin-left: 10px;margin-right: 10px;
+      p{text-align:center;font-size:18px;color:$default-color;margin-top: 0;line-height: initial;
+        .redColor{color:#d82124;font-size: 22px;}
+      }
+    }
+  }
+  .contactField{margin:0px auto; text-align:center; padding:5px 20px;//background: rgba(0,0,0,0.1);
+    input, select{border:1px solid $default-color;padding:10px;margin: auto;width: 100%;height: 40px;
+      &::-moz-placeholder {color: $default-color;	opacity: 0.7;font-size:14px;letter-spacing: 0.5px;		}
+      &::-webkit-input-placeholder { color: $default-color;	opacity: 0.7;font-size:14px;letter-spacing: 0.5px;		}
+    }
+    select { -webkit-appearance: none; background:#fff; border-radius: 2px}
+    textarea{border:1px solid $default-color;padding:10px;margin: auto;width: 100%;height: 100px;
+      &::-moz-placeholder {color: $default-color;	opacity: 0.7;font-size:14px;letter-spacing: 0.5px;		}
+      &::-webkit-input-placeholder { color: $default-color;	opacity: 0.7;font-size:14px;letter-spacing: 0.5px;		}
+    }
+  }
+  .removeborder{
+    label{border:1px solid $default-color;
+      select{border: none !important;}
+    }
+    }
+  .buttonDiv{width: 100%;padding: 20px 20px;
+    button{background:$defaultButtonColor none repeat scroll 0 0;width: 100% !important;border-radius:0px !important;color:$buttonFontColor;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }}
+}

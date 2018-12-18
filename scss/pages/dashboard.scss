@@ -1,0 +1,68 @@
+.dashboard{background:url("../img/listingBackground.jpg") no-repeat scroll left bottom /cover;display: block;background-repeat: repeat-y;
+  .top-Container{background:url("../img/homeback.jpg") no-repeat scroll left bottom /cover;display: block;background-repeat: repeat-y;width: 100%;height: auto;
+
+  }
+  .overlay{
+
+    background: rgba(36,32,36,0.47);
+    background: -moz-linear-gradient(top, rgba(36,32,36,0.47) 0%, rgba(0,0,0,0.72) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(36,32,36,0.47)), color-stop(100%, rgba(0,0,0,0.72)));
+    background: -webkit-linear-gradient(top, rgba(36,32,36,0.47) 0%, rgba(0,0,0,0.72) 100%);
+    background: -o-linear-gradient(top, rgba(36,32,36,0.47) 0%, rgba(0,0,0,0.72) 100%);
+    background: -ms-linear-gradient(top, rgba(36,32,36,0.47) 0%, rgba(0,0,0,0.72) 100%);
+    background: linear-gradient(to bottom, rgba(36,32,36,0.47) 0%, rgba(0,0,0,0.72) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242024', endColorstr='#000000', GradientType=0 );
+
+  .tobSubheader{border-bottom:1px solid #fff;
+    .col{color:#fff;text-align:center;
+      .active{border-bottom:1.5px solid #fff;}
+    }
+  }
+  .locationbar{
+    .col{padding: 15px;
+      //input{border-radius: 4px;height: 50px; margin: 0; padding: 0 0 0 10px; width: 100%;}
+      p{background: #fff none repeat scroll 0 0;
+    border-radius: 4px;
+    color: #7c7c7c;
+    margin: 0 0 10px;
+    padding: 10px;line-height: 35px;}
+    }
+  }
+  .iconSearch{
+    .col{text-align: center;padding:10px;
+      .iconscon{background: #fff none repeat scroll 0 0;border-radius: 50%;color: #cf2122;font-size:25px;height:50px;line-height:50px;width: 50px;margin-left: 25px;}
+      .active{background: #cf2122 none repeat scroll 0 0;border-radius: 50%;color: #fff;font-size:25px;height:50px;line-height:50px;width: 50px;margin-left: 25px;}
+      .text{color:#fff;font-size: 11px;}
+    }
+  }
+  .rangebar{
+    .col{padding:10px;
+      .item{padding: 5px;margin: 0; border-radius: 4px;
+        input{margin-left: 20px;margin-right: 20px; height: 40px; margin-bottom: 0; margin-top: 0;}
+        p{font-size: 10px;}
+      }
+    }
+  }
+  .searchButton{
+    .col{padding:10px;
+      .button{ background: #cf2122 none repeat scroll 0 0;border-radius: 40px;color: #fff;font-size: 14px;font-weight: normal;width: 100%;}
+    }
+  }
+
+  }
+
+  .postButtons{
+    .col{padding: 10px 5px;
+      .button{border-radius: 4px;color: #fff;font-size: 11px;font-weight: normal;padding: 0;width: 100%;}
+      .property{background: #2196F3}
+      .REQUIREMENT{background: #003555}
+    }
+  }
+}
+
+.notificationScreen{background:url("../img/listingBackground.jpg") no-repeat scroll left bottom /cover;display: block;background-repeat: repeat-y;
+  .center{margin-top: 40%;text-align: center;
+    i{font-size: 70px;color:#bcbcbc;}
+    p{margin-top: 10px;font-size: 18px;color:#444;}
+  }
+}

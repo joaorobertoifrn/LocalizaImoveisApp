@@ -1,0 +1,25 @@
+.menu{
+
+  .expanded{padding: 0;background:url("../img/userbackground.jpg") no-repeat scroll left bottom /cover !important;display: block;background-repeat: repeat-y;display: table;border: none;
+    img {border: 4px solid #fff;border-radius: 50%;height: 125px;width: 125px;left:74px;top:8px;}
+    .menu-bottom{color:#fff;font-size:13px; margin-bottom: 5px; margin-top: 7px !important;margin-top: 20px; position: relative;left: 5px;padding: 5px;}
+    .welcome{margin-left:5px;padding: 5px;}
+  }
+  .sideMenu{top:170px !important;background: #003555;
+    .list{
+      .item:nth-child(even){border: none;
+        .item-content{background: #01304C;color: #d6d6d6;font-size: 14px;padding: 8px 49px 8px 16px;
+          img{width: 40px;height: 40px;vertical-align: middle;margin-right: 10px;}
+        }
+      }
+      .item:nth-child(odd){border: none;
+        .item-content{background: #013252;color: #d6d6d6;font-size: 14px;padding: 8px 49px 8px 16px;
+          img{width: 40px;height: 40px;vertical-align: middle;margin-right: 10px;}
+        }
+      }
+    }
+  }
+}
+
+.menu-open .ion-navicon:before {  content: "\f2ca";} /*Menu Arrow*/
+.menu-open .ion-more:before {  content: "\f30f";} /*Menu Arrow*/

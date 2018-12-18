@@ -1,0 +1,96 @@
+<ion-view view-title="">
+  <ion-content class="registerScreen commonBackground" scroll="true" >
+    <a class="skipButton" href="#/app/dashbaord">SKIP</a>
+    <div class="logo">
+      <div class="container"><img ng-src="img/logo.png"></div>
+    </div>
+
+    <div class="row morefuncti {{isshow ? 'hideDiv' : 'showDiv'}}">
+      <div class="col">Please Register to unlock More Functionality</div>
+    </div>
+
+    <div class="row {{isshow ? 'userType' : 'afterclick'}}">
+      <div class="col" ng-repeat="btn in typeName">
+        <button  ng-class="{'active': $index == selectedButton }" class="button icon ion-person " ng-click="activeButton($index,isshow)"></button>
+        {{btn.name}}
+      </div>
+    </div>
+  <form name="userregisterForm" class="formStyle {{isshow ? 'showDiv' : 'hideDiv'}}"  ng-submit="userRegister(userregisterForm);" novalidate >
+    <!--Name -->
+    <div class="row signupBtn" >
+     <input type="text" placeholder="Name" name="customer_name" ng-model="iniRegister.customer_name"  ng-pattern="namePattern" minlength="3" ng-minlength="3"   required>
+   </div>
+   <div class="error-container" ng-show="userregisterForm.customer_name.$error" ng-messages="userregisterForm.customer_name.$error">
+    <div ng-messages-include="name.html"></div>
+  </div>
+
+  <!-- Email -->
+  <div class="row signupBtn">
+   <input type="email" placeholder="Email Address" name="email" ng-model="iniRegister.email" required>
+  </div>
+  <div class="error-container" ng-show="userregisterForm.email.$error" ng-messages="userregisterForm.email.$error">
+  <div ng-messages-include="email.html"></div>
+  </div>
+
+  <!-- Mobile -->
+  <div class="row signupBtn">
+  <input type="tel" placeholder="Mobile No" name="mobile" ng-model="iniRegister.mobile"  maxlength="10" minlength="10" ng-pattern="phonenumber" required>
+  </div>
+
+  <div class="error-container" ng-show="userregisterForm.mobile.$error" ng-messages="userregisterForm.mobile.$error">
+  <div ng-messages-include="phone.html"></div>
+  </div>
+
+  <!--Password & Confirm Password-->
+  <div class="row signupBtn" >
+   <input type="password" placeholder="Password" name="user_password"  ng-model="iniRegister.user_password"  minlength="8" maxlength="20"  ng-pattern="pwdpattern" required>
+  </div>
+  <div class="error-container" ng-show="userregisterForm.user_password.$error" ng-messages="userregisterForm.user_password.$error">
+    <div ng-messages-include="password.html"></div>
+  </div>
+
+  <div class="row signupBtn" >
+   <input type="password" placeholder="Confirm Password" name="confirm" ng-model="iniRegister.confirm"  ng-pattern="{{iniRegister.user_password}}" required>
+  </div>
+
+  <div class="error-container" ng-show="userregisterForm.confirm.$error" ng-messages="userregisterForm.confirm.$error">
+    <div ng-messages-include="condition.html"></div>
+  </div>
+
+  <div class="buttonDiv">
+    <button class="button submitButton" ng-disabled="userregisterForm.$invalid">Register</button>
+  </div>
+
+  <div class="footersection">
+    <div class="row footer firstfooter" >
+      <p>Have an Account? <span class="footerButtons" ng-click="loginPage()">Login</span></p>
+    </div>
+  </div>
+  </form>
+
+  <script id="email.html" type="text/ng-template">
+    <div class="error" ng-message="email">  Please enter a valid email address  </div>
+  </script>
+  <script id="name.html" type="text/ng-template">
+    <div class="error" ng-message="pattern">  Please enter only character  </div>
+    <div class="error" ng-message="minlength"> Minimum length of this field is 3 characters!.  </div>
+  </script>
+
+  <script id="password.html" type="text/ng-template">
+    <div class="error" ng-message="minlength">  Minimum length of this field is 8 characters!. </div>
+    <div class="error" ng-message="maxlength">  Maximum length of this field is 20 characters!. </div>
+    <div class="error" ng-message="pattern"> Use one number and one uppercase and lowercase letter, and at least 8 or more characters.
+    </div>
+  </script>
+  <script id="condition.html" type="text/ng-template">
+   <div class="error" ng-message="pattern">  Must match the previous entry </div>
+ </script>
+ <script id="phone.html" type="text/ng-template">
+  <div class="error" ng-message="minlength">  Minimum length of this field is 10 characters! </div>
+  <div class="error" ng-message="maxlength">  Maximum length of this field is 10 characters!  </div>
+  <div class="error" ng-message="pattern">  Please match pattern ex.[9213400900]  </div>
+</script>
+
+
+</ion-content>
+</ion-view>

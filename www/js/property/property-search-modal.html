@@ -1,0 +1,34 @@
+<ion-modal-view class="search-modal">
+  <ion-header-bar class="bar-stable">
+    <button ng-click="closeModal(1)" class="button back-button button-icon button-clear header-item ion-android-arrow-back"></button>
+    <h1 class="title ">Search Property</h1>
+  </ion-header-bar>
+  <div class="bar bar-subheader">
+    <master-box pholder="Search" searchfun="getSearchResult(data)" resetfun="resetSearch(data)" query="query" ></master-box>
+  </div>
+  <ion-content class="serch-modal-section">
+    <div class="row" ng-if="searchCats">Popular Category</div>
+    <div class="row" ng-if="searchCats" ng-repeat="catobj in searchCats" ng-click="searchProduct(catobj.id,catobj.title);closeModal(1);">
+      <div class="col col-20">
+        <img ng-src="{{catobj.main_image}}" />
+      </div>
+      <div class="col col-80">
+        <div class="row"><h2>$ {{catobj.price}} Million<h2></div>
+        <div class="row"><h3>{{catobj.area_name}}</h3></div>
+        <div class="row"><h4>{{catobj.address}}</h3></div>
+      </div>
+    </div>
+
+      <div class="row">Popular Search</div>
+      <div class="row" ng-repeat="obj in popularSearch" ng-click="searchProduct(catobj.id,catobj.title);closeModal(1);">
+        <div class="col col-20">
+          <img ng-src="{{obj.img}}" />
+        </div>
+        <div class="col col-80">
+          <div class="row"><h2>$ {{obj.price}} Million<h2></div>
+          <div class="row"><h3>{{obj.loc}}</h3></div>
+          <div class="row"><h4>{{obj.addr}}</h3></div>
+        </div>
+     </div>
+  </ion-content>
+</ion-modal-view>

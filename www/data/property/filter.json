@@ -1,0 +1,52 @@
+{"success":true,
+
+"buget":[
+{"bg_id":11,"min":"5  Lac", "max":"10 Lac"}
+
+
+],
+
+"property_type":[
+{"p_id":11,"type":"Flat"},
+{"p_id":12,"type":"House"},
+{"p_id":13,"type":"Office Space"},
+{"p_id":14,"type":"Plot"},
+{"p_id":15,"type":"Shop"},
+{"p_id":16,"type":"Commercial"}
+],
+
+"bedroom":[
+{"b_id":11,"room_no":1,"name":"One"},
+{"b_id":12,"room_no":2,"name":"Two"},
+{"b_id":13,"room_no":3,"name":"Three"},
+{"b_id":14,"room_no":4,"name":"Four"}
+],
+
+
+"area_square":[
+{"a_id":31,"min":"0","max":"100"}
+	
+
+],
+
+"possession_status":[
+
+{"pt_id":101,"ptype":"Under Contruction"},
+{"pt_id":102,"ptype":"Ready to move"}
+],
+
+"sale_type":[
+
+{"st_id":101,"stype":"New"},
+{"st_id":102,"stype":"Resale"}
+],
+
+"postedby":[
+  {"post_id":20,"role":"Owner" },
+  {"post_id":21,"role":"Builder" },
+  {"post_id":22,"role":"Agent" }
+
+]
+
+
+}

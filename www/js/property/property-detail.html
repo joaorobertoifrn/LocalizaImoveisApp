@@ -1,0 +1,118 @@
+<ion-view>
+<ion-content class="propertyDetail has-footer">
+  <div class="row headerbutton">
+    <div class="col leftButton">
+      <button ng-click="$ionicGoBack()" class="button ion-android-arrow-back"></button>
+    </div>
+    <div class="col rightButton">
+      <button class="button ion-android-map" ng-click="roadMap(specificProducts.latitude,specificProducts.longitude)"></button>
+    </div>
+  </div>
+  <ion-slide-box ng-if="specificProducts.slideshow.length">
+    <ion-slide ng-repeat="image in specificProducts.slideshow">
+      <div class="box">
+        <img ng-src="{{image}}">
+      </div>
+    </ion-slide>
+  </ion-slide-box>
+
+  <div class="detailContainer">
+    <div class="row heading">
+      <div class="col col-75">
+        <h4>{{specificProducts.flat_type}}</h4>
+        <p>{{specificProducts.address}}</p>
+      </div>
+      <div class="col priceSection">
+        <h4>{{specificProducts.price}} Million</h4>
+        <p>Verified</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h5 class="subheading">STATUS</h5>
+        <p class="mainHeading">{{specificProducts.possession_status}}</p>
+      </div>
+      <div class="col">
+        <h5 class="subheading">{{specificProducts.postedby}}</h5>
+        <p class="mainHeading">{{specificProducts.property_holder_name}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h5 class="subheading">POSTED</h5>
+        <p class="mainHeading">{{specificProducts.post_date}}</p>
+      </div>
+      <div class="col">
+        <h5 class="subheading">BUILD UP AREA</h5>
+        <p class="mainHeading">{{specificProducts.area_range}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h5 class="subheading">DETAILS</h5>
+        <p class="mainHeading">{{specificProducts.flat_details}}</p>
+      </div>
+    </div>
+
+    <div class="row descRow">
+      <div class="col">
+        <h5>Description</h5>
+        <p>{{specificProducts.decriptions}}</p>
+      </div>
+    </div>
+
+    <div class="row amenities"><div class="col"><h5>Amenities</h5></div></div>
+    <div class="row desImg">
+      <div class="col" ng-repeat="aminitesObj in specificProducts.amenities">
+        <img ng-src="{{aminitesObj.imga}}">
+        <p>{{aminitesObj.title}}</p>
+      </div>
+    </div>
+
+    <div class="row amenities"><div class="col"><h5>Latest Reviews</h5></div></div>
+    <div class="list">
+      <a class="item item-avatar">
+        <img src="img/avatar1.png">
+        <h2>Venkman</h2>
+        <p>Very nice property!!</p>
+        <i class="ion-thumbsup"></i> 55
+      </a>
+      <a class="item item-avatar">
+        <img src="img/avatar2.png">
+        <h2>Stefen Strelling</h2>
+        <p>Very good localty to be in.Lots of greenry all around.Must be there all the time for the purpose of enjoyment and well being</p>
+        <i class="ion-thumbsup"></i> 20
+      </a>
+      <a class="item item-avatar">
+        <img src="img/avatar3.png">
+        <h2>Robert Peterson</h2>
+        <p>Not suggested for the the living purpose.Very far away from the railway station.</p>
+        <i class="ion-thumbsdown"></i> 5
+      </a>
+      <a class="item item-avatar">
+        <img src="img/avatar4.png">
+        <h2>Robert</h2>
+        <p>Very bad experience of visiting this properyt.Not suggested at all.</p>
+        <i class="ion-thumbsdown"></i> 2
+      </a>
+      <a class="item item-avatar">
+        <img src="img/avatar5.png">
+        <h2>Stephens</h2>
+        <p>Lovely property to be in.Must suggested to all for this wonderful property.</p>
+        <i class="ion-thumbsup"></i> 13
+      </a>
+    </div>
+    <div class="dummyrow"></div>
+  </div>
+</ion-content>
+<div class="bar bar-footer detailFooter">
+  <div class="row">
+    <a><div class="col"  ng-click="sendEmail()"><i class = "icon icon ion-android-mail"></i></div></a>
+    <a href="tel:7985689542"><div class="col callButton"><i class = "icon icon ion-ios-telephone"></i></div></a>
+    <a><div class="col" ng-click="twitterShare()"><i class = "icon icon ion-android-share-alt"></i></div></a>
+  </div>
+</div>
+</ion-view>

@@ -1,0 +1,67 @@
+
+  <ion-content class="loginScreen commonBackground" scroll="true" >
+    <div class="skipButton" ng-click="dashboardPage()">SKIP</div>
+		<div class="logo">
+      <div class="container"><img ng-src="img/logo.png"></div>
+    </div>
+
+    <div class="row socialLogin">
+      <div class="col"><button class="button icon ion-social-facebook"></button></div>
+      <div class="col"><button class="button icon ion-social-google-outline"></button></div>
+    </div>
+
+    <div class="row or"><div class="col"><span>OR</span></div></div>
+
+
+    <form name="userLoginForm" class="formStyle" ng-submit="userLogin(userLoginForm);" novalidate>
+      <!-- Email -->
+      <div class="row signupBtn">
+          <input type="email" placeholder="Email Address" name="email"  ng-model="inilogin.email" required>
+      </div>
+       <div class="error-container" ng-show="userLoginForm.email.$error" ng-messages="userLoginForm.email.$error">
+          <div ng-messages-include="email.html"></div>
+       </div>
+
+      <!-- Password -->
+      <div class="row loginBtn">
+           <input type="password" placeholder="Password" name="user_password" ng-model="inilogin.user_password" maxlength="20" ng-minlength="8" ng-maxlength="20" ng-pattern="pwdpattern" required>
+      </div>
+
+      <!-- password validation-->
+         <div class="error-container" ng-show="userLoginForm.user_password.$error" ng-messages="userLoginForm.user_password.$error">
+          <div ng-messages-include="password.html"></div>
+        </div>
+      <!--End-->
+      <div class="row preference">
+        <div class="col rem"><ion-checkbox>Remember me</ion-checkbox></div>
+        <div class="col for" ng-click="goto()">Forgot password?</div>
+      </div>
+
+      <div class="buttonDiv">
+           <button class="button submitButton"  ng-disabled="userLoginForm.$invalid">LOG IN</button>
+      </div>
+
+      <div class="row signupPage">
+        <div class="col" ng-click="registerPage()">Don't have account? <span>Sign Up</span></div>
+      </div>
+
+      <div class="row signupPage demoaccount">
+        <div class="col">Login with demo account</div>
+      </div>
+      <div class="row signupPage demoaccount">
+        <div class="col">Username <br>demo@test.com</div>
+        <div class="col">Password <br>Ost@2016</div>
+      </div>
+    </form>
+
+    <script id="email.html" type="text/ng-template">
+      <div class="error" ng-message="email">  Please enter a valid email address  </div>
+    </script>
+
+    <script id="password.html" type="text/ng-template">
+      <div class="error" ng-message="minlength">  Minimum length of this field is 8 characters!. </div>
+      <div class="error" ng-message="maxlength">  Maximum length of this field is 20 characters!. </div>
+      <div class="error" ng-message="pattern">Use one number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
+    </script>
+
+  </ion-content>
